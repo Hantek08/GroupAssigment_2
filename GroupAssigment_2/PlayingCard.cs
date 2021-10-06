@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,7 +33,7 @@ namespace GroupAssigment_2
 
 		/// <summary>
 		/// Returns "Face" for Ace,Knight, Queen, King. Otherwise it returns "Value".
-		/// 
+		/// Use switch expression
 		/// </summary>
 		string FaceOrValue
 		{
@@ -46,9 +45,7 @@ namespace GroupAssigment_2
 					_ => "Value",
 				};
 				return sRet;
-				//YOUR CODE
-				//to return "Face" or "Value"
-				//Use switch expression
+				
 			}
 
 		}
@@ -71,3 +68,7 @@ namespace GroupAssigment_2
 		}
 	}
 }
+
+
+
+
