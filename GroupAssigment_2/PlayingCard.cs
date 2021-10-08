@@ -41,7 +41,7 @@ namespace GroupAssigment_2
 			{
 				string sRet = Value switch
 				{
-					PlayingCardValue.Ace or PlayingCardValue.Knight or PlayingCardValue.Queen or PlayingCardValue.King => "Face",
+			     	PlayingCardValue.Ace or PlayingCardValue.Knight or PlayingCardValue.Queen or PlayingCardValue.King => "Face",
 					_ => "Value",
 				};
 				return sRet;

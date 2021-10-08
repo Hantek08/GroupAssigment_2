@@ -35,7 +35,11 @@ namespace GroupAssigment_2
             string sRet = "";
             for (int i = 0; i < Count; i++)
             {
-                sRet += cards[i].ToString() + "\n";
+                if (cards[i] != null)
+                {
+                    sRet += cards[i].ToString() + "\n";
+                }
+                
             }
             return sRet;
         }
@@ -85,12 +89,66 @@ namespace GroupAssigment_2
         /// Removes the top card in the deck and 
         /// </summary>
         /// <returns>The card removed from the deck</returns>
+
         public PlayingCard GetTopCard()
         {
+            // assign the second element value to the first element value
+            PlayingCard cardDrawn = cards[0];
+            Console.WriteLine($"==== Card {cards[0]} has been drawn and replaced with {cards[1]}");
+            cards[0] = null;
+
+            // sort the deck so clubs three takes position of clubs two then shift all cards
+
+            int length = Count;
+            for (int i = 0; i < length; i++)
+            {
+                if (cards[i] == null)
+                {
+                    for (int j = i; j < length - 1; j++)
+                    {
+                        if (cards[i] == cards[j])
+                        {
+                            PlayingCard tmp = cards[length - 1];
+                            cards[length - 1] = cards[j];
+                            cards[j] = tmp;
+                            length--;
+                            j--;
+                        }
+                    }
+                }
+            }
+
+            return cardDrawn;
+            /*for (int unsortedStart = 0; unsortedStart < cards.Length - 1; unsortedStart++)
+            {
+                // ViewPoint A
+                int minIndex = unsortedStart;
+                int minValue = (int)cards[unsortedStart].Value;
+
+                //Iterate over the unsorted part
+                for (int i = unsortedStart + 1; i < cards.Length; i++)
+                {
+                    //Find the smalest element in the unsorted part
+                    if ((int)cards[i].Value < minValue)
+                    {
+                        minIndex = i;
+                        minValue = (int)cards[i].Value;
+                    }
+                }
+
+                // Swap the smalest element with the 
+                // Two ways to swap:
+
+                // Traditional
+                PlayingCard tmp = cards[unsortedStart];
+                cards[unsortedStart] = cards[minIndex];
+                cards[minIndex] = tmp;
+            }/
 
             //YOUR CODE
             //to return the Top card of the deck and reduce the nr of cards in the deck
-            return null;
+            */
+
         }
 
         public DeckOfCards()
@@ -98,6 +156,19 @@ namespace GroupAssigment_2
             FreshDeck();
             //YOUR CODE
             //to write a constructor that generates a fresh deck of cards
+        }
+
+        public int CardCounter()
+        {
+            int counter = 0;
+            for (int i = 0; i < MaxNrOfCards; i++)
+            {
+                if(cards[i] != null)
+                {
+                    counter++;
+                }
+            }
+            return counter;
         }
     }
 }

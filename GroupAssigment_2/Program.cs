@@ -27,7 +27,7 @@ namespace GroupAssigment_2
             Console.WriteLine(myDeck.GetTopCard());
             Console.WriteLine(myDeck.GetTopCard());
 
-            Console.WriteLine($"\nDeck has now {myDeck.Count} cards:");
+            Console.WriteLine($"\nDeck has now {myDeck.CardCounter()} cards:");
             Console.WriteLine(myDeck);
 
         }
