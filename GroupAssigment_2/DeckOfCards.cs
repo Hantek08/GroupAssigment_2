@@ -119,41 +119,18 @@ namespace GroupAssigment_2
             }
 
             return cardDrawn;
-            /*for (int unsortedStart = 0; unsortedStart < cards.Length - 1; unsortedStart++)
-            {
-                // ViewPoint A
-                int minIndex = unsortedStart;
-                int minValue = (int)cards[unsortedStart].Value;
-
-                //Iterate over the unsorted part
-                for (int i = unsortedStart + 1; i < cards.Length; i++)
-                {
-                    //Find the smalest element in the unsorted part
-                    if ((int)cards[i].Value < minValue)
-                    {
-                        minIndex = i;
-                        minValue = (int)cards[i].Value;
-                    }
-                }
-
-                // Swap the smalest element with the 
-                // Two ways to swap:
-
-                // Traditional
-                PlayingCard tmp = cards[unsortedStart];
-                cards[unsortedStart] = cards[minIndex];
-                cards[minIndex] = tmp;
-            }/
+         
 
             //YOUR CODE
             //to return the Top card of the deck and reduce the nr of cards in the deck
-            */
+            
 
         }
 
         public DeckOfCards()
         {
             FreshDeck();
+            
             //YOUR CODE
             //to write a constructor that generates a fresh deck of cards
         }

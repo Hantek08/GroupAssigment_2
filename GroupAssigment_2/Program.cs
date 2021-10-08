@@ -8,7 +8,7 @@ namespace GroupAssigment_2
         {
             //Prinout 3 random cards
             Console.WriteLine($"\n3 randomly generated cards:");
-            Console.WriteLine(new PlayingCard().ToString());
+            Console.WriteLine(new PlayingCard());
             Console.WriteLine(new PlayingCard());
             Console.WriteLine(new PlayingCard());
 
